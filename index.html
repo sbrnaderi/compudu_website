@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-background: #f8fafc; /* Light blueish-gray background for sophistication */
-        --color-foreground: #0f172a; /* Deep navy for primary text, excellent readability */
-      
-        --color-primary: #0284c7; /* Professional blue for primary actions */
-        --color-primary-foreground: #ffffff; /* White text on primary elements */
-      
-        --color-border: #e2e8f0; /* Soft gray for borders */
-        --color-input: #f1f5f9; /* Light cool gray for input fields */
-        --color-ring: #0284c7; /* Matching primary color for focus states */
-      
-        --color-secondary: #f1f5f9; /* Light cool gray for secondary elements */
-        --color-secondary-foreground: #1e293b; /* Dark slate for secondary text */
-      
-        --color-accent: #6366f1; /* Indigo for accents, modern and tech-focused */
-        --color-accent-foreground: #ffffff; /* White text on accent elements */
-      
-        --color-destructive: #ef4444; /* Bright red for destructive actions */
-        --color-destructive-foreground: #ffffff; /* White text on destructive elements */
-      
-        --color-muted: #f8fafc; /* Very light cool gray for muted areas */
-        --color-muted-foreground: #64748b; /* Medium slate for muted text */
-      
-        --color-card: #ffffff; /* Pure white for card backgrounds */
-        --color-card-foreground: #0f172a; /* Deep navy for card text */
-      
-        --color-popover: #ffffff; /* White for popovers */
-        --color-popover-foreground: #0f172a; /* Deep navy for popover text */
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-background: #f8fafc; 
+      --color-foreground: #0f172a; 
+      --color-primary: #1e3a8a; /* Dark blue for primary actions */
+      --color-secondary: #1e293b;
+      --color-accent: #1d4ed8; /* Blue for accents */
+      --color-muted: #f1f5f9;
+    }
+  </style>
+</head>
+<body>
 <div class="min-h-screen bg-background text-foreground">
+  <!-- Header -->
+  <header class="container mx-auto px-4 py-8 flex justify-between items-center">
+    <div class="logo">
+      <!-- Placeholder for Logo -->
+      <img src="https://placehold.co/100x40?text=Logo" alt="Logo" class="h-10 w-auto" />
+    </div>
+    <nav>
+      <ul class="flex space-x-8">
+        <li><a href="#" class="text-secondary hover:text-primary">Product</a></li>
+        <li><a href="#" class="text-secondary hover:text-primary">Solutions</a></li>
+        <li><a href="#" class="text-secondary hover:text-primary">Developers</a></li>
+        <li><a href="#" class="text-secondary hover:text-primary">Customers</a></li>
+        <li><a href="#" class="text-secondary hover:text-primary">Pricing</a></li>
+      </ul>
+    </nav>
+    <div class="flex space-x-4">
+      <a href="#" class="text-primary border border-primary px-4 py-2 rounded hover:bg-primary/10 transition-colors">Contact Sales</a>
+      <a href="#" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Demo Request</a>
+    </div>
+  </header>
+
   <!-- Hero Section -->
   <header class="container mx-auto px-4 py-16 md:py-24">
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-stretch md:space-x-8">
+      <div class="text-center md:text-left md:w-1/2 flex flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
         Bridging AI Prototypes to Production-Ready Certified Medical Devices
       </h1>
-      <button class="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+      <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
         Schedule Free Consultation
       </button>
+      </div>
+      <div class="mt-8 md:mt-0 md:w-1/2 flex items-center">
+      <!-- Video -->
+      <video class="w-full h-full object-cover" autoplay muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      </div>
     </div>
   </header>
 
@@ -55,7 +64,7 @@
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center space-y-6">
         <h2 class="text-2xl md:text-3xl font-semibold text-accent-foreground">
-          Confused with navigating the regulatory landscape to deliver your innovative algorithm as a medical device?
+         Get Your Product Approved As A Medical Device 
         </h2>
         <p class="text-lg text-muted-foreground">
           We guide you through the process of turning your AI software into a medical device
@@ -65,14 +74,13 @@
   </section>
 
   <!-- Trusted By Section -->
-  <section class="py-16 bg-card">
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-2xl font-semibold text-center mb-10">Trusted By</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-        <img class="h-12 w-auto" src="https://placehold.co/200x80?text=Logo+1" alt="Company 1" />
-        <img class="h-12 w-auto" src="https://placehold.co/200x80?text=Logo+2" alt="Company 2" />
-        <img class="h-12 w-auto" src="https://placehold.co/200x80?text=Logo+3" alt="Company 3" />
-        <img class="h-12 w-auto" src="https://placehold.co/200x80?text=Logo+4" alt="Company 4" />
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-0 items-center justify-items-center">
+        <img class="h-28 w-auto" src="philips-new.svg" alt="Philips" />
+        <img class="h-28 w-auto" src="Biogen-Logo.png" alt="Biogen" />
+        <img class="h-20 w-auto" src="logo-moca-montreal-mobile.png" alt="MoCA Cognition" />
       </div>
     </div>
   </section>
@@ -88,8 +96,8 @@
           <p class="text-muted-foreground">
             Transform prototype algorithms into robust, scalable systems with clean code, automated testing, and maintainable architecture.
           </p>
+          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
         </div>
-
         <!-- Regulatory Guidance Card -->
         <div class="bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
           <img class="w-12 h-12 mb-4" src="https://placehold.co/48x48.svg?text=📋" alt="Regulatory Guidance Icon" />
@@ -97,8 +105,8 @@
           <p class="text-muted-foreground">
             Navigate FDA, CE Marking, and ISO 13485 compliance with structured development processes and documentation support.
           </p>
+          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
         </div>
-
         <!-- Process Optimization Card -->
         <div class="bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
           <img class="w-12 h-12 mb-4" src="https://placehold.co/48x48.svg?text=🔄" alt="Process Optimization Icon" />
@@ -106,6 +114,7 @@
           <p class="text-muted-foreground">
             Design workflows to bridge gaps between data scientists, engineers, and regulatory teams.
           </p>
+          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
         </div>
       </div>
     </div>
