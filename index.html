@@ -74,25 +74,123 @@ transform: translateY(0);
   <div class="min-h-screen bg-background text-foreground">
     <!-- Header -->
     <div class="bg-gradient-to-br from-secondary/5 to-primary/5">
-      <header class="container mx-auto px-4 py-8 flex justify-between items-center">
-      <div class="logo">
-        <!-- Placeholder for Logo -->
-        <img src="assets/logo.png" alt="Compudu Logo" class="h-20 w-auto" />
-      </div>
-      <nav>
-        <ul class="flex space-x-8">
-          <li><a href="#services" class="text-secondary hover:text-primary">Services</a></li>
-          <li><a href="#about" class="text-secondary hover:text-primary">About</a></li>
-          <li><a href="#blog" class="text-secondary hover:text-primary">Blog</a></li>
-          <li><a href="#contact" class="text-secondary hover:text-primary">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="flex space-x-4">
-        <a href="#contact" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Demo
-          Request</a>
-      </div>
+      <header class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center relative">
+          <div class="logo z-20">
+            <a href="#">
+              <img src="assets/logo.png" alt="Compudu Logo" class="h-20 w-auto" />
+            </a>
+          </div>
+          
+          <!-- Hamburger Menu -->
+          <button id="menu-toggle" class="md:hidden z-20 p-2" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="hamburger-top" class="transition-transform duration-200" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"/>
+              <path id="hamburger-middle" class="transition-opacity duration-200" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"/>
+              <path id="hamburger-bottom" class="transition-transform duration-200" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"/>
+            </svg>
+          </button>
+
+          <nav class="hidden md:block">
+            <ul class="flex md:space-x-8">
+              <li><a href="#" class="text-secondary hover:text-primary">Home</a></li>
+              <li><a href="#services" class="text-secondary hover:text-primary">Services</a></li>
+              <li><a href="#about" class="text-secondary hover:text-primary">About</a></li>
+              <li><a href="#blog" class="text-secondary hover:text-primary">Blog</a></li>
+              <li><a href="#contact" class="text-secondary hover:text-primary">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="hidden md:flex space-x-4">
+            <a href="#contact" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Free
+              Consultation</a>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transform translate-x-full transition-transform duration-300 md:hidden pointer-events-none">
+            <div class="flex flex-col h-full pt-24 px-6 pointer-events-auto">
+              <nav class="flex-1">
+                <ul class="space-y-6 text-center">
+                  <li><a href="#" class="block text-xl text-secondary hover:text-primary py-2">Home</a></li>
+                  <li><a href="#services" class="block text-xl text-secondary hover:text-primary py-2">Services</a></li>
+                  <li><a href="#about" class="block text-xl text-secondary hover:text-primary py-2">About</a></li>
+                  <li><a href="#blog" class="block text-xl text-secondary hover:text-primary py-2">Blog</a></li>
+                  <li><a href="#contact" class="block text-xl text-secondary hover:text-primary py-2">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="py-6 text-center">
+                <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded hover:bg-primary/90 transition-colors">Free
+                  Consultation</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
+
+    <script>
+      function toggleMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const topLine = document.getElementById('hamburger-top');
+        const middleLine = document.getElementById('hamburger-middle');
+        const bottomLine = document.getElementById('hamburger-bottom');
+        const body = document.body;
+        
+        const isOpen = mobileMenu.classList.contains('translate-x-0');
+        
+        if (isOpen) {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          // Reset hamburger
+          topLine.style.transform = '';
+          middleLine.style.opacity = '1';
+          bottomLine.style.transform = '';
+          // Enable scrolling
+          body.style.overflow = '';
+        } else {
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          // Animate to X
+          topLine.style.transform = 'translateY(6px) rotate(45deg)';
+          middleLine.style.opacity = '0';
+          bottomLine.style.transform = 'translateY(-6px) rotate(-45deg)';
+          // Prevent background scrolling
+          body.style.overflow = 'hidden';
+        }
+      }
+
+      // Close mobile menu when clicking links
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          const mobileMenu = document.getElementById('mobile-menu');
+          const topLine = document.getElementById('hamburger-top');
+          const middleLine = document.getElementById('hamburger-middle');
+          const bottomLine = document.getElementById('hamburger-bottom');
+          const body = document.body;
+          
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          // Reset hamburger
+          topLine.style.transform = '';
+          middleLine.style.opacity = '1';
+          bottomLine.style.transform = '';
+          // Re-enable scrolling
+          body.style.overflow = '';
+          
+          // Small delay to ensure smooth scrolling to section
+          setTimeout(() => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId !== '#') {
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          }, 100);
+        });
+      });
+    </script>
 
     <!-- Hero Section -->
     <header class="relative min-h-[600px] overflow-hidden">
