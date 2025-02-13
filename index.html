@@ -36,22 +36,25 @@
   </header>
 
   <!-- Hero Section -->
-  <header class="container mx-auto px-4 py-16 md:py-24">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-stretch md:space-x-8">
-      <div class="text-center md:text-left md:w-1/2 flex flex-col justify-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-        Bridging AI Prototypes to Production-Ready Certified Medical Devices
-      </h1>
-      <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-        Schedule Free Consultation
-      </button>
-      </div>
-      <div class="mt-8 md:mt-0 md:w-1/2 flex items-center">
-      <!-- Video -->
-      <video class="w-full h-full object-cover" autoplay muted>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <header class="relative min-h-[600px] overflow-hidden">
+    <!-- Video Background -->
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 py-16 md:py-24">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-stretch md:space-x-8">
+        <div class="text-center md:text-left md:w-2/3 flex flex-col justify-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+            Bridging AI Prototypes to Production-Ready Certified Medical Devices
+          </h1>
+          <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+            Schedule Free Consultation
+          </button>
+        </div>
       </div>
     </div>
   </header>
