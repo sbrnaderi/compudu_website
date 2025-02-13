@@ -111,35 +111,62 @@
   </section>
 
   <!-- Services Section -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
+  <section class="py-20 bg-black/90 relative">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-blue-400 font-semibold mb-4">OUR OFFERINGS</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Harnessing AI for Medical Device Innovation
+        </h2>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+          Transform your medical device projects with tailored AI solutions from Compudu. Elevate performance and enhance patient care through our expertise.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- AI Productionization Card -->
-        <div class="bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-          <img class="w-12 h-12 mb-4" src="https://placehold.co/48x48.svg?text=⚙️" alt="AI Productionization Icon" />
-          <h3 class="text-xl font-semibold mb-3">AI Productionization</h3>
-          <p class="text-muted-foreground">
-            Transform prototype algorithms into robust, scalable systems with clean code, automated testing, and maintainable architecture.
-          </p>
-          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
+          <div>
+            <img class="w-12 h-12 mb-6" src="assets/process.svg" alt="AI Productionization Icon" />
+            <h3 class="text-xl font-bold text-gray-900 mb-4">AI Productionization</h3>
+            <p class="text-gray-600 mb-6">
+              Transform prototype algorithms into robust, scalable systems with clean code, automated testing, and maintainable architecture.
+            </p>
+          </div>
+          <div class="mt-auto">
+            <button class="w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold">Learn More</button>
+          </div>
         </div>
+
         <!-- Regulatory Guidance Card -->
-        <div class="bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-          <img class="w-12 h-12 mb-4" src="https://placehold.co/48x48.svg?text=📋" alt="Regulatory Guidance Icon" />
-          <h3 class="text-xl font-semibold mb-3">Regulatory Guidance</h3>
-          <p class="text-muted-foreground">
-            Navigate FDA, CE Marking, and ISO 13485 compliance with structured development processes and documentation support.
-          </p>
-          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
+        <div class="bg-blue-700 p-8 rounded-lg shadow-lg text-white flex flex-col h-full">
+          <div>
+            <img class="w-12 h-12 mb-6 brightness-0 invert" src="assets/selling.svg" alt="Regulatory Icon" />
+            <h3 class="text-xl font-bold mb-4">Regulatory Guidance</h3>
+            <p class="text-blue-100 mb-6">
+              Navigate FDA, CE Marking, and ISO 13485 compliance with structured development processes and documentation support.
+            </p>
+          </div>
+          <div class="mt-auto">
+            <button class="w-full bg-white text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">Learn More</button>
+          </div>
         </div>
+
         <!-- Process Optimization Card -->
-        <div class="bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-          <img class="w-12 h-12 mb-4" src="https://placehold.co/48x48.svg?text=🔄" alt="Process Optimization Icon" />
-          <h3 class="text-xl font-semibold mb-3">Process Optimization</h3>
-          <p class="text-muted-foreground">
-            Design workflows to bridge gaps between data scientists, engineers, and regulatory teams.
-          </p>
-          <button class="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">Learn More</button>
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col h-full">
+          <div>
+            <img class="w-12 h-12 mb-6" src="assets/legal-case.svg" alt="Process Icon" />
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Process Optimization</h3>
+            <p class="text-gray-600 mb-6">
+              Design workflows to bridge gaps between data scientists, engineers, and regulatory teams.
+            </p>
+          </div>
+          <div class="mt-auto">
+            <button class="w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold">Learn More</button>
+          </div>
         </div>
       </div>
     </div>
