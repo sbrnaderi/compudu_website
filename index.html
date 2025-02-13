@@ -73,8 +73,8 @@ transform: translateY(0);
 <body>
   <div class="min-h-screen bg-background text-foreground">
     <!-- Header -->
-    <div class="bg-gradient-to-br from-secondary/5 to-primary/5">
-      <header class="container mx-auto px-4 py-8">
+    <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-secondary/5 to-primary/5 backdrop-blur-sm shadow-md">
+      <header class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center relative">
           <div class="logo z-20">
             <a href="#">
@@ -193,7 +193,7 @@ transform: translateY(0);
     </script>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[600px] overflow-hidden">
+    <header class="relative min-h-[600px] overflow-hidden pt-20">
       <!-- Video Background -->
       <video class="absolute inset-0 w-full h-full object-cover" autoplay muted>
         <source src="assets/video.webm" type="video/webm">
