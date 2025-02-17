@@ -243,15 +243,35 @@
     </section>
 
     <!-- Trusted By Section -->
-    <section class="bg-gradient-to-br from-secondary/5 to-primary/5 py-10">
+    <section class="bg-gradient-to-br from-secondary/5 to-primary/5 py-10 overflow-hidden">
       <div class="container mx-auto px-4">
         <h2 class="text-l font-semibold text-center mb-10">TRUSTED BY</h2>
-        <div class="max-w-2xl mx-auto flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          <img class="h-8 md:h-18 w-auto object-contain" src="assets/philips-new.svg" alt="Philips" />
-          <img class="h-8 md:h-20 w-auto object-contain" src="assets/Biogen-Logo.png" alt="Biogen" />
-          <img class="h-6 md:h-12 w-auto object-contain" src="assets/logo-moca-montreal-mobile.png" alt="MoCA Cognition" />
+        <div class="relative">
+          <div class="logos-slide flex items-center gap-8 md:gap-12 animate-scroll">
+            <!-- First set -->
+            <img class="h-8 md:h-18 w-auto object-contain min-w-[200px]" src="assets/philips-new.svg" alt="Philips" />
+            <img class="h-8 md:h-20 w-auto object-contain min-w-[200px]" src="assets/Biogen-Logo.png" alt="Biogen" />
+            <img class="h-6 md:h-12 w-auto object-contain min-w-[200px]" src="assets/logo-moca-montreal-mobile.png" alt="MoCA Cognition" />
+            <!-- Duplicate set for seamless loop -->
+            <img class="h-8 md:h-18 w-auto object-contain min-w-[200px]" src="assets/philips-new.svg" alt="Philips" />
+            <img class="h-8 md:h-20 w-auto object-contain min-w-[200px]" src="assets/Biogen-Logo.png" alt="Biogen" />
+            <img class="h-6 md:h-12 w-auto object-contain min-w-[200px]" src="assets/logo-moca-montreal-mobile.png" alt="MoCA Cognition" />
+          </div>
         </div>
       </div>
+      <style>
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+      </style>
     </section>
 
     <!-- Services Section -->
